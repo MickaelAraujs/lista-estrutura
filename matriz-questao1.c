@@ -48,6 +48,19 @@ void imprimir(int vetor[tamanho]) {
 	}
 }
 
+// Calculando matriz transposta (questão 3)
+
+void transposta(int vetor[tamanho]) {
+	int i,j;
+	for(i=0;i<linha;i++) {
+		for(j=0;j<coluna;j++) {
+			int k = j*coluna + i;
+			printf("%d ", vetor[k]);
+		}
+		printf("\n");
+	}
+}
+
 void preencher(int vetor[tamanho]) {
 	printf("\nPREENCHENDO MATRIZ %d X %d\n\n",linha,coluna);
 	int i,j;
@@ -127,6 +140,12 @@ void menu(int opcao, int matriz[tamanho]) {
 			}
 			break;
 		}
+		case 5: {
+			system("cls");
+			transposta(matriz);
+			system("pause\n\n");
+			break;
+		}
 		case 0: break;
 		default: {
 			printf("\nOPCAO INVALIDA!!\n\n");
@@ -156,6 +175,7 @@ main() {
 			printf("2. Remover valor da matriz\n\n");
 			printf("3. Imprimir matriz\n\n");
 			printf("4. Buscar valor na Matriz\n\n");
+			printf("5. Exibir matriz transposta\n\n");
 			printf("\n0. Sair\n\n");
 
 			scanf("%d",&opcao);
